@@ -22,6 +22,7 @@ dpkg --add-architecture i386 && \
     patchelf \
     ipython \
     python-dev \
+    python3-distutils \
     file --fix-missing && \
     rm -rf /var/lib/apt/list/*
 
@@ -30,8 +31,7 @@ wget https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py && \
     rm get-pip.py
 
-python3 -m pip install -U pip && \
-    python3 -m pip install --no-cache-dir \
+python3 -m pip install --no-cache-dir \
     -i https://pypi.doubanio.com/simple/  \
     --trusted-host pypi.doubanio.com \
     ropper \
@@ -44,7 +44,6 @@ pip install --upgrade setuptools && \
     -i https://pypi.doubanio.com/simple/  \
     --trusted-host pypi.doubanio.com \
     ropgadget \
-    pwntools \
     zio \
     smmap2 \
     z3-solver \
@@ -53,6 +52,8 @@ pip install --upgrade setuptools && \
 gem install one_gadget seccomp-tools && rm -rf /var/lib/gems/2.*/cache/*
 
 mkdir ~/.pip && cp pip.conf ~/.pip/
+
+pip install pwntools 
 
 git clone https://github.com/pwndbg/pwndbg && \
     cd pwndbg && chmod +x setup.sh && ./setup.sh
