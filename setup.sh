@@ -48,8 +48,7 @@ pip install --upgrade setuptools && \
     zio \
     smmap2 \
     z3-solver \
-    apscheduler && \
-    pip install --upgrade pwntools
+    apscheduler
 
 gem install one_gadget seccomp-tools && rm -rf /var/lib/gems/2.*/cache/*
 
